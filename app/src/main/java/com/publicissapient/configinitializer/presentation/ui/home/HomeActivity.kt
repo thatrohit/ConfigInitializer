@@ -12,13 +12,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModelProvider
 import com.publicissapient.configinitializer.presentation.theme.ConfigInitializerTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : ComponentActivity() {
     lateinit var viewModel: HomeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        val items = viewModel.getListItems(assets, resources)
+        val items = viewModel.getListItems()
         setContent {
             ConfigInitializerTheme {
                 // A surface container using the 'background' color from the theme

@@ -3,10 +3,13 @@ package com.publicissapient.configinitializer.repository.usecase.parser
 import android.content.res.AssetManager
 import com.google.gson.Gson
 import com.publicissapient.configinitializer.model.EnvironmentConfig
+import dagger.hilt.android.scopes.ViewModelScoped
 import java.io.IOException
 import java.nio.charset.Charset
+import javax.inject.Inject
 
-class JSONConfigParser(
+
+class JSONConfigParser @Inject constructor(
     private val assets: AssetManager,
     private val gson: Gson
 ): ConfigParser<EnvironmentConfig> {

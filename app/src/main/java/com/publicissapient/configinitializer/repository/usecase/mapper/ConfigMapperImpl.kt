@@ -9,10 +9,13 @@ import com.publicissapient.configinitializer.repository.model.Config
 import com.publicissapient.configinitializer.repository.model.ConfigListItem
 import com.publicissapient.configinitializer.repository.model.SubItem
 import android.content.res.Resources.NotFoundException
+import javax.inject.Inject
 
-class ConfigMapperImpl: ConfigMapper<EnvironmentConfig, Config> {
+class ConfigMapperImpl @Inject constructor(
+    private val resource: Resources
+): ConfigMapper<EnvironmentConfig, Config> {
 
-    override fun map(resource: Resources, parsedJson: EnvironmentConfig): Config {
+    override fun map(parsedJson: EnvironmentConfig): Config {
         @SuppressLint("DiscouragedApi")
         fun String.resolveString(): String {
             val resId = resource.getIdentifier(

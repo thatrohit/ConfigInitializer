@@ -1,6 +1,5 @@
 package com.publicissapient.configinitializer.repository.usecase.parser
 
-interface ConfigParser<out T> {
-
-    fun parseConfigRawFile(rawFilePath: String) : T
+interface ConfigParser<out ParsedModel> {
+    fun parseConfigRawFile(rawFilePath: String) : ParsedModel
 }
