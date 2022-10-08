@@ -1,0 +1,63 @@
+{
+  "titleResourceId": "appname_launcher",
+  "target": "in.myapplication",
+  "components": [
+    {
+      "type": "picker",
+      "titleResourceId": "select_env",
+      "descriptionResourceId": "select_env_desc",
+      "items": [
+        {
+          "titleResourceId": "uat_1",
+          "descriptionResourceId": "uat_1_desc",
+          "value": "https://uat1.myapplication.in",
+          "extra": null
+        },
+        {
+          "titleResourceId": "uat_2",
+          "descriptionResourceId": "uat_2_desc",
+          "value": "https://uat2.myapplication.in",
+          "extra": null
+        },
+        {
+          "titleResourceId": "development",
+          "descriptionResourceId": "development_desc",
+          "value": "https://dev.myapplication.in",
+          "extra": null
+        },
+        {
+          "titleResourceId": "pre_prod",
+          "descriptionResourceId": "pre_prod_desc",
+          "value": "https://preprod.myapplication.in",
+          "extra": null
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "titleResourceId": "extra_flags",
+      "descriptionResourceId": "extra_flags_desc",
+      "items": [
+        {
+          "titleResourceId": "enable_chuck",
+          "descriptionResourceId": "enable_chuck_desc",
+          "value": "false",
+          "extra": null
+        },
+        {
+          "titleResourceId": "enable_ab_testing",
+          "descriptionResourceId": "enable_ab_testing_desc",
+          "value": "false",
+          "extra": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "titleResourceId": "custom_param",
+      "descriptionResourceId": "custom_param_desc",
+      "items": null,
+      "extra": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ConfigInitializer</string>
+    <string name="appname_launcher">Anime Finder Launcher</string>
+    <string name="select_env">Select Environment</string>
+    <string name="select_env_desc">Select the environment you want your app to run on</string>
+    <string name="uat_1">UAT 1</string>
+    <string name="uat_1_desc">UAT 1 env [https://uat1.myapplication.in]</string>
+    <string name="uat_2">UAT 2 env</string>
+    <string name="uat_2_desc">UAT 2 env [https://uat2.myapplication.in]</string>
+    <string name="development">Development env</string>
+    <string name="development_desc">dev env [https://dev.myapplication.in]</string>
+    <string name="pre_prod">Pre-Production env</string>
+    <string name="pre_prod_desc">Prod Prod env [https://preprod.myapplication.in]</string>
+    <string name="extra_flags">Additional configuration items</string>
+    <string name="extra_flags_desc">Additional flags you want to send to your application</string>
+    <string name="enable_chuck">Chuck Network Logger</string>
+    <string name="enable_chuck_desc">Enable / Disable chuck network interceptor</string>
+    <string name="enable_ab_testing">A/B Testing</string>
+    <string name="enable_ab_testing_desc">Enable A/B testing flag</string>
+    <string name="custom_param">Custom Arguments</string>
+    <string name="custom_param_desc">Any custom arguments you want to send to your app</string>
+</resources>
