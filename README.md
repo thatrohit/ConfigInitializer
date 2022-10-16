@@ -5,4 +5,4 @@ This makes it easier for your QA to validate your application against different 
 
 All you have to do is edit the `config.json` file contained inside the `assets` folder.
 
-Please refer to [tutorial.md](https://github.com/user/repo/blob/master/tutorial.md) for a detailed description on how you can leverage the `config.json` to create your own UI elements.
+Please refer to [tutorial.md](https://github.com/thatrohit/ConfigInitializer/blob/master/tutorial.md) for a detailed description on how you can leverage the `config.json` to create your own UI elements.
