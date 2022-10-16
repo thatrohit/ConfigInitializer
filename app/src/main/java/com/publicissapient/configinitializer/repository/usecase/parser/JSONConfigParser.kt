@@ -2,10 +2,8 @@ package com.publicissapient.configinitializer.repository.usecase.parser
 
 import android.content.res.AssetManager
 import com.google.gson.Gson
+import com.publicissapient.configinitializer.repository.usecase.parser.ParsingUtils.CONFIG_NAME
 import com.publicissapient.configinitializer.model.EnvironmentConfig
-import dagger.hilt.android.scopes.ViewModelScoped
-import java.io.IOException
-import java.nio.charset.Charset
 import javax.inject.Inject
 
 
@@ -15,21 +13,7 @@ class JSONConfigParser @Inject constructor(
 ): ConfigParser<EnvironmentConfig> {
 
     override fun parseConfigRawFile(rawFilePath: String): EnvironmentConfig {
-        var json: String
-        try {
-            val inputStream = assets.open(rawFilePath)
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            val charset: Charset = Charsets.UTF_8
-            inputStream.read(buffer)
-            inputStream.close()
-            json = String(buffer, charset)
-        }
-        catch (ex: IOException) {
-            json = ""
-            ex.printStackTrace()
-        }
-        val parsedJson = gson.fromJson(json, EnvironmentConfig::class.java)
-        return parsedJson
+        val json = ParsingUtils.getJsonString(rawFilePath, assets)
+        return gson.fromJson(json, EnvironmentConfig::class.java)
     }
 }

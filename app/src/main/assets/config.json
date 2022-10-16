@@ -1,6 +1,7 @@
 {
   "titleResourceId": "appname_launcher",
   "target": "com.example.animefinder",
+  "targetActivity": ".search.SearchActivity",
   "components": [
     {
       "type": "picker",
@@ -10,25 +11,31 @@
         {
           "titleResourceId": "uat_1",
           "descriptionResourceId": "uat_1_desc",
-          "value": "https://uat1.myapplication.in",
+          "value": "https://graphql.uat1.anilist.co",
           "extra": null
         },
         {
           "titleResourceId": "uat_2",
           "descriptionResourceId": "uat_2_desc",
-          "value": "https://uat2.myapplication.in",
+          "value": "https://graphql.uat2.anilist.co",
           "extra": null
         },
         {
           "titleResourceId": "development",
           "descriptionResourceId": "development_desc",
-          "value": "https://dev.myapplication.in",
+          "value": "https://graphql.dev.anilist.co",
           "extra": null
         },
         {
           "titleResourceId": "pre_prod",
           "descriptionResourceId": "pre_prod_desc",
-          "value": "https://preprod.myapplication.in",
+          "value": "https://graphql.preprod.anilist.co",
+          "extra": null
+        },
+        {
+          "titleResourceId": "prod",
+          "descriptionResourceId": "prod_desc",
+          "value": "https://graphql.anilist.co",
           "extra": null
         }
       ]

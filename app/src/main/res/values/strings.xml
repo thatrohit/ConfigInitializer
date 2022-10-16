@@ -3,14 +3,16 @@
     <string name="appname_launcher">Anime Finder Launcher</string>
     <string name="select_env">Select Environment</string>
     <string name="select_env_desc">Select the environment you want your app to run on</string>
+    <string name="prod">Production</string>
+    <string name="prod_desc">Prod env [https://graphql.anilist.co]</string>
     <string name="uat_1">UAT 1</string>
-    <string name="uat_1_desc">UAT 1 env [https://uat1.myapplication.in]</string>
+    <string name="uat_1_desc">UAT 1 env [https://graphql.uat1.anilist.co]</string>
     <string name="uat_2">UAT 2 env</string>
-    <string name="uat_2_desc">UAT 2 env [https://uat2.myapplication.in]</string>
+    <string name="uat_2_desc">UAT 2 env [https://graphql.uat2.anilist.co]</string>
     <string name="development">Development env</string>
-    <string name="development_desc">dev env [https://dev.myapplication.in]</string>
+    <string name="development_desc">dev env [https://graphql.dev.anilist.co]</string>
     <string name="pre_prod">Pre-Production env</string>
-    <string name="pre_prod_desc">Prod Prod env [https://preprod.myapplication.in]</string>
+    <string name="pre_prod_desc">Prod Prod env [https://graphql.preprod.anilist.co]</string>
     <string name="extra_flags">Additional configuration items</string>
     <string name="extra_flags_desc">Additional flags you want to send to your application</string>
     <string name="enable_chuck">Chuck Network Logger</string>
@@ -25,4 +27,7 @@
     <string name="custom_param_desc_2">Send a goodbye message</string>
 
     <string name="target_app">Anime Finder</string>
+    <string name="missing_item">Missing or invalid key</string>
+    <string name="for_component">For component at index</string>
+    <string name="for_item">For item at index</string>
 </resources>

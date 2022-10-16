@@ -1,4 +1,4 @@
-package com.publicissapient.configinitializer.com.publicissapient.configinitializer.presentation.ui.home
+package com.publicissapient.configinitializer.presentation.ui.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -134,7 +134,7 @@ class HomeWidgets @Inject constructor() {
                         Modifier.size(AssistChipDefaults.IconSize)
                     )
                     },
-                    onClick = {null}
+                    onClick = {}
                 )
                 composable.forEach {
                     it.invoke()

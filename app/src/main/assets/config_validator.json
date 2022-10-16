@@ -1,0 +1,29 @@
+{
+  "requiredKeys": [
+    {
+      "key": "titleResourceId",
+      "type": "String"
+    },
+    {
+      "key": "target",
+      "type": "String"
+    },
+    {
+      "key": "targetActivity",
+      "type": "String"
+    },
+    {
+      "key": "components",
+      "type": "Array"
+    }
+  ],
+  "validComponents": [
+    "picker", "switch", "text"
+  ],
+  "requiredComponentKeys": [
+    "titleResourceId", "type"
+  ],
+  "requiredSubComponentKeys": [
+    "titleResourceId", "value"
+  ]
+}

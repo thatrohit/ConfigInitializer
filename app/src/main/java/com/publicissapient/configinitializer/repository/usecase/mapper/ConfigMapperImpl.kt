@@ -16,8 +16,7 @@ class ConfigMapperImpl @Inject constructor(
 ): ConfigMapper<EnvironmentConfig, Config> {
 
     override fun map(parsedJson: EnvironmentConfig): Config {
-        @SuppressLint("DiscouragedApi")
-        fun String.resolveString(): String {
+        fun String?.resolveString(): String {
             val resId = resource.getIdentifier(
                 this,
                 "string",
@@ -30,21 +29,21 @@ class ConfigMapperImpl @Inject constructor(
             }
         }
         val configListItems = mutableListOf<ConfigListItem>()
-        parsedJson.components.forEach { component ->
+        parsedJson.components?.forEach { component ->
             val configListSubItems = mutableListOf<SubItem>()
             component.items?.forEach { subItem ->
                 configListSubItems.add(
                     SubItem(
-                        id = subItem.titleResourceId,
+                        id = subItem.titleResourceId ?: "",
                         title = subItem.titleResourceId.resolveString(),
                         subtext = subItem.descriptionResourceId.resolveString(),
-                        value = subItem.value
+                        value = subItem.value ?: ""
                     )
                 )
             }
             configListItems.add(
                 ConfigListItem(
-                    id = component.titleResourceId,
+                    id = component.titleResourceId ?: "",
                     title = component.titleResourceId.resolveString(),
                     type = Component.getComponent(component.type),
                     subtext = component.descriptionResourceId.resolveString(),
@@ -54,7 +53,8 @@ class ConfigMapperImpl @Inject constructor(
         }
         var config = Config(
             title = parsedJson.titleResourceId.resolveString(),
-            targetPackage = parsedJson.target,
+            targetPackage = parsedJson.target ?: "",
+            targetActivity = parsedJson.targetActivity ?: "",
             items = configListItems
         )
 
