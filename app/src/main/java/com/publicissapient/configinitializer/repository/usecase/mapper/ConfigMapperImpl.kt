@@ -35,6 +35,7 @@ class ConfigMapperImpl @Inject constructor(
             component.items?.forEach { subItem ->
                 configListSubItems.add(
                     SubItem(
+                        id = subItem.titleResourceId,
                         title = subItem.titleResourceId.resolveString(),
                         subtext = subItem.descriptionResourceId.resolveString(),
                         value = subItem.value
@@ -43,6 +44,7 @@ class ConfigMapperImpl @Inject constructor(
             }
             configListItems.add(
                 ConfigListItem(
+                    id = component.titleResourceId,
                     title = component.titleResourceId.resolveString(),
                     type = Component.getComponent(component.type),
                     subtext = component.descriptionResourceId.resolveString(),

@@ -17,10 +17,6 @@ class HomeViewModel @Inject constructor(): ViewModel() {
     @Inject
     lateinit var mapper: @JvmSuppressWildcards ConfigMapper<EnvironmentConfig, Config>
 
-    override fun onCleared() {
-        super.onCleared()
-    }
-
     fun getListItems(): Config? {
         val parsedResult = parser.parseConfigRawFile("config.json")
         val config = mapper.map(parsedResult)

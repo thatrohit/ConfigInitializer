@@ -19,4 +19,10 @@
     <string name="enable_ab_testing_desc">Enable A/B testing flag</string>
     <string name="custom_param">Custom Arguments</string>
     <string name="custom_param_desc">Any custom arguments you want to send to your app</string>
+    <string name="custom_param_1">Greeting Message</string>
+    <string name="custom_param_desc_1">Send a greetings message</string>
+    <string name="custom_param_2">Goodbye message</string>
+    <string name="custom_param_desc_2">Send a goodbye message</string>
+
+    <string name="target_app">Anime Finder</string>
 </resources>

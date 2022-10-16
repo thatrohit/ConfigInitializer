@@ -1,49 +1,70 @@
 package com.publicissapient.configinitializer.presentation.ui.home
 
+import android.content.ComponentName
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.lifecycle.ViewModelProvider
+import com.publicissapient.configinitializer.R
+import com.publicissapient.configinitializer.com.publicissapient.configinitializer.presentation.ui.home.HomeWidgets
+import com.publicissapient.configinitializer.model.CHUCK
+import com.publicissapient.configinitializer.model.ENVIRONMENT
 import com.publicissapient.configinitializer.presentation.theme.ConfigInitializerTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@OptIn(ExperimentalMaterial3Api::class)
 @AndroidEntryPoint
 class HomeActivity : ComponentActivity() {
+
     lateinit var viewModel: HomeViewModel
+
+    @Inject
+    lateinit var widgets: HomeWidgets
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        val items = viewModel.getListItems()
         setContent {
             ConfigInitializerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                Scaffold(
+                    topBar = {
+                        widgets.ConfigAppTopBar(getString(R.string.appname_launcher))
+                    },
+                    bottomBar = {
+                        widgets.ConfigAppBottomBar(
+                            launchButtonOnClick(),
+                            "Launch ${getString(R.string.target_app)}"
+                        )
+                    }
                 ) {
-                    Greeting("Android")
+                    widgets.ConfigAppHomeLayout(
+                        it,
+                        viewModel.getListItems()
+                    )
                 }
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ConfigInitializerTheme {
-        Greeting("Android")
+    private fun launchButtonOnClick(): () -> Unit = {
+        /*val pkg = (viewModel.getListItems()?.targetPackage ?: "")
+        val cls = "$pkg.search.SearchActivity"
+        val intent = Intent().apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            component = ComponentName(pkg, cls)
+            putExtra(
+                ENVIRONMENT,
+                viewModel.getListItems()?.items?.first()?.subItems?.first()?.value
+            )
+            putExtra(CHUCK, viewModel.getListItems()?.items?.get(1)?.subItems?.first()?.value)
+        }
+        startActivity(intent)*/
+        Log.d("ARGUMENTS", widgets.args.toString())
     }
 }

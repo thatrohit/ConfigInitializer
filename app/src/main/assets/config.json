@@ -1,6 +1,6 @@
 {
   "titleResourceId": "appname_launcher",
-  "target": "in.myapplication",
+  "target": "com.example.animefinder",
   "components": [
     {
       "type": "picker",
