@@ -1,7 +1,7 @@
 # ConfigInitializer
 
-This app acts as a launcher application for a target application. You can use this app to initialize your target application with configuration variables, such as API endpoints, killswitches, enable/disable application features.
-This makes it easier for your QA to validate your application against different config variables. Instead of you providing multiple build with different configurations, you can launch a single application with different config variables.
+This app acts as a launcher application for a target application. You can use this app to initialize your target application with configuration variables such as API endpoints, killswitches, etc.
+This makes it easier for your QA to validate your application against different config variables. Instead of you providing multiple build with different configurations, you can launch your application via ConfigInitializer to provide different config variables.
 
 All you have to do is edit the `config.json` file contained inside the `assets` folder.
 
